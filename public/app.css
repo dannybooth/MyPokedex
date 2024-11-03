@@ -1,0 +1,20 @@
+/* src/App.css */
+.App {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  .pokemon-list {
+    list-style: none;
+    padding: 0;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .pokemon-list li {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 5px;
+    font-size: 18px;
+  }
