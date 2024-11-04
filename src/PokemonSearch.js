@@ -38,11 +38,25 @@ const PokemonSearch = () => {
             {pokemon && (
                 <div>
                     <h2>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h2>
-                    <p>ID: {pokemon.id}</p>
+                    <p>Pokedex number: {pokemon.id}</p>
                     <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+                    <p>Type: {pokemon.types.map((typeInfo) => typeInfo.type.name).join(', ')}</p>
+                    <p>Abilities: {pokemon.abilities.map((abilityInfo) => abilityInfo.ability.name).join(', ')}</p>
+                    <p>Height: {pokemon.height}</p>
+                    <p>Weight: {pokemon.weight}</p>
+                    <div>
+                    <h3>Base Stats:</h3>
+                    <ul>
+                        {pokemon.stats.map((statInfo) => (
+                            <li key={statInfo.stat.name}>
+                                {statInfo.stat.name.charAt(0).toUpperCase() + statInfo.stat.name.slice(1)}: {statInfo.base_stat}
+                            </li>
+                        ))}
+                    </ul>
                 </div>
-            )}
-        </div>
+            </div>
+        )}
+    </div>
     );
 };
 
